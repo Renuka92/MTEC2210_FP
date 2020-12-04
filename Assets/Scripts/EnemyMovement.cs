@@ -5,7 +5,11 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     public static float enemySpeedHorizontal = 3;
-    public float enemySpeedVertical;
+    public static float enemySpeedVertical = 0.5f;
+
+    public bool UFO;
+    public float UFO_Speed;
+    public float gameTime = 30;
 
     GameManager gameManager;
     Rigidbody2D rb;
@@ -19,8 +23,23 @@ public class EnemyMovement : MonoBehaviour
 
     void Update()
     {
-        transform.position += (Vector3.right * enemySpeedHorizontal * Time.deltaTime);
-        transform.position += (Vector3.down * enemySpeedVertical * Time.deltaTime);
+        //transform.position += (Vector3.right * enemySpeedHorizontal * Time.deltaTime);
+        //transform.position += (Vector3.down * enemySpeedVertical * Time.deltaTime);
+
+        if (UFO)
+        {
+            transform.position += (Vector3.right * UFO_Speed * Time.deltaTime);
+        }
+        else
+        {
+            transform.position += (Vector3.right * enemySpeedHorizontal * Time.deltaTime);
+            transform.position += (Vector3.down * enemySpeedVertical * Time.deltaTime);
+        }
+
+        if (gameTime > 0)
+        {
+            gameTime -= Time.deltaTime;
+        }
 
         //if (transform.position.y > 1)
         //{
@@ -57,6 +76,10 @@ public class EnemyMovement : MonoBehaviour
         {
             //speedModifier = Random.Range(0.5f, 2);
             enemySpeedHorizontal *= -1.0f;
+            if (UFO)
+            {
+                UFO_Speed *= -1.0f;
+            }
         }
 
         if (collision.gameObject.tag == "EnemyBoundary")
@@ -74,9 +97,15 @@ public class EnemyMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //if (collision.gameObject.tag == "EndBorder")
+        //{
+        //    //speedModifier = Random.Range(0.5f, 2);
+        //    enemySpeedHorizontal *= -1.0f;
+        //}
+
+
         if (collision.gameObject.tag == "PlayerBullet")
         {
-            Debug.Log("got em");
             EnemyKilled();
             //Destroy(gameObject);
             //score = score++;
@@ -87,7 +116,7 @@ public class EnemyMovement : MonoBehaviour
     public void EnemyKilled()
     {
         //Vector2 pos = transform.position;
-        //gameManager.IncreaseScore();
+        gameManager.IncreaseScore();
         Destroy(gameObject);
         //        gameManager.IncreaseKillCounter(pos);
     }

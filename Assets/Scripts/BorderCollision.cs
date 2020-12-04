@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BorderColliding : MonoBehaviour
+public class BorderCollision : MonoBehaviour
 {
-    //float enemySpeedHorizontal;
     float enemySpeedHorizontal = EnemyMovement.enemySpeedHorizontal;
-
+    float enemySpeedVertical = EnemyMovement.enemySpeedVertical;
 
     void Start()
     {
-        //enemySpeedHorizontal = EnemyMovement.enemySpeedHorizontal;
+        
     }
 
+    // Update is called once per frame
     void Update()
     {
         
@@ -22,11 +22,8 @@ public class BorderColliding : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            //speedModifier = Random.Range(0.5f, 2);
-            Debug.Log("made it here");
-            Debug.Log(enemySpeedHorizontal);
             enemySpeedHorizontal *= -1.0f;
+            enemySpeedVertical *= -1.0f;
         }
     }
-
 }
