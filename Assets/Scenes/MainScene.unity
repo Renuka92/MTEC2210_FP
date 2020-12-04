@@ -346,12 +346,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 76104949}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47696532e856d4ecdb9e74a18bda8cd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpeedHorizontal: 2
   enemySpeedVertical: 0.5
 --- !u!50 &76104952
 Rigidbody2D:
@@ -491,12 +490,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 138207381}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47696532e856d4ecdb9e74a18bda8cd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpeedHorizontal: 2
   enemySpeedVertical: 0.5
 --- !u!50 &138207384
 Rigidbody2D:
@@ -713,16 +711,16 @@ GameObject:
   m_Component:
   - component: {fileID: 251932335}
   - component: {fileID: 251932334}
-  - component: {fileID: 251932336}
   - component: {fileID: 251932338}
   - component: {fileID: 251932337}
-  m_Layer: 0
+  - component: {fileID: 251932336}
+  m_Layer: 11
   m_Name: UFO
-  m_TagString: Untagged
+  m_TagString: UFO
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &251932334
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -794,13 +792,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 251932333}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47696532e856d4ecdb9e74a18bda8cd6, type: 3}
+  m_Script: {fileID: 11500000, guid: 384f54d41f37d476e8df90af44ea415b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpeedHorizontal: 6
-  enemySpeedVertical: 0
+  UFO_Speed: 2
+  gameTime: 60
 --- !u!61 &251932337
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -889,12 +887,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 301361931}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47696532e856d4ecdb9e74a18bda8cd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpeedHorizontal: 2
   enemySpeedVertical: 0.5
 --- !u!50 &301361934
 Rigidbody2D:
@@ -1034,12 +1031,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 327682552}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47696532e856d4ecdb9e74a18bda8cd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpeedHorizontal: 2
   enemySpeedVertical: 0.5
 --- !u!50 &327682555
 Rigidbody2D:
@@ -1164,7 +1160,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 375908103}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -6.45, y: -4.05, z: 0}
+  m_LocalPosition: {x: -6.45, y: -3.43, z: 0}
   m_LocalScale: {x: 0.06589474, y: 13.261755, z: 1.0126152}
   m_Children: []
   m_Father: {fileID: 1053899258}
@@ -1365,12 +1361,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 489531314}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47696532e856d4ecdb9e74a18bda8cd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpeedHorizontal: 2
   enemySpeedVertical: 0.5
 --- !u!50 &489531317
 Rigidbody2D:
@@ -1510,12 +1505,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 574319950}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47696532e856d4ecdb9e74a18bda8cd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpeedHorizontal: 2
   enemySpeedVertical: 0.5
 --- !u!50 &574319953
 Rigidbody2D:
@@ -1655,12 +1649,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 601544006}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47696532e856d4ecdb9e74a18bda8cd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpeedHorizontal: 2
   enemySpeedVertical: 0.5
 --- !u!50 &601544009
 Rigidbody2D:
@@ -1878,12 +1871,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 805738345}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47696532e856d4ecdb9e74a18bda8cd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpeedHorizontal: 2
   enemySpeedVertical: 0.5
 --- !u!50 &805738348
 Rigidbody2D:
@@ -2103,7 +2095,7 @@ GameObject:
   - component: {fileID: 890734947}
   - component: {fileID: 890734946}
   - component: {fileID: 890734945}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: PlayerCannon
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -2286,12 +2278,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 966236828}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47696532e856d4ecdb9e74a18bda8cd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpeedHorizontal: 2
   enemySpeedVertical: 0.5
 --- !u!50 &966236831
 Rigidbody2D:
@@ -2417,12 +2408,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 971699300}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47696532e856d4ecdb9e74a18bda8cd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpeedHorizontal: 2
   enemySpeedVertical: 0.5
 --- !u!212 &971699302
 SpriteRenderer:
@@ -2546,7 +2536,7 @@ GameObject:
   - component: {fileID: 987173492}
   - component: {fileID: 987173495}
   - component: {fileID: 987173494}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Left
   m_TagString: EndBorder
   m_Icon: {fileID: 0}
@@ -2771,12 +2761,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1150022472}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47696532e856d4ecdb9e74a18bda8cd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpeedHorizontal: 2
   enemySpeedVertical: 0.5
 --- !u!50 &1150022475
 Rigidbody2D:
@@ -2916,12 +2905,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1165453046}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47696532e856d4ecdb9e74a18bda8cd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpeedHorizontal: 2
   enemySpeedVertical: 0.5
 --- !u!50 &1165453049
 Rigidbody2D:
@@ -3061,12 +3049,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1166263309}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47696532e856d4ecdb9e74a18bda8cd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpeedHorizontal: 2
   enemySpeedVertical: 0.5
 --- !u!50 &1166263312
 Rigidbody2D:
@@ -3286,12 +3273,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1187798108}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47696532e856d4ecdb9e74a18bda8cd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpeedHorizontal: 2
   enemySpeedVertical: 0.5
 --- !u!50 &1187798111
 Rigidbody2D:
@@ -3431,12 +3417,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1262283437}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47696532e856d4ecdb9e74a18bda8cd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpeedHorizontal: 2
   enemySpeedVertical: 0.5
 --- !u!50 &1262283440
 Rigidbody2D:
@@ -3576,12 +3561,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1387741877}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47696532e856d4ecdb9e74a18bda8cd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpeedHorizontal: 2
   enemySpeedVertical: 0.5
 --- !u!50 &1387741880
 Rigidbody2D:
@@ -3689,7 +3673,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1460771804}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -3752,12 +3736,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1524344818}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47696532e856d4ecdb9e74a18bda8cd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpeedHorizontal: 2
   enemySpeedVertical: 0.5
 --- !u!50 &1524344821
 Rigidbody2D:
@@ -3883,12 +3866,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1534124025}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47696532e856d4ecdb9e74a18bda8cd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpeedHorizontal: 2
   enemySpeedVertical: 0.5
 --- !u!212 &1534124027
 SpriteRenderer:
@@ -4157,12 +4139,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1549293193}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47696532e856d4ecdb9e74a18bda8cd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpeedHorizontal: 2
   enemySpeedVertical: 0.5
 --- !u!1 &1605553936
 GameObject:
@@ -4283,12 +4264,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1623877913}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47696532e856d4ecdb9e74a18bda8cd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpeedHorizontal: 2
   enemySpeedVertical: 0.5
 --- !u!50 &1623877916
 Rigidbody2D:
@@ -4396,9 +4376,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1676500233}
-  m_Layer: 0
+  - component: {fileID: 1676500234}
+  m_Layer: 8
   m_Name: Enemies
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4411,7 +4392,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1676500232}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.09, y: -2.36, z: -10}
+  m_LocalPosition: {x: 0.06, y: -2.36, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1166263310}
@@ -4442,6 +4423,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1676500234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1676500232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47696532e856d4ecdb9e74a18bda8cd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemySpeedVertical: 0
 --- !u!1 &1747069293
 GameObject:
   m_ObjectHideFlags: 0
@@ -4483,12 +4477,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1747069293}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47696532e856d4ecdb9e74a18bda8cd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpeedHorizontal: 2
   enemySpeedVertical: 0.5
 --- !u!50 &1747069296
 Rigidbody2D:
@@ -4628,12 +4621,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1805064367}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47696532e856d4ecdb9e74a18bda8cd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpeedHorizontal: 2
   enemySpeedVertical: 0.5
 --- !u!50 &1805064370
 Rigidbody2D:
@@ -4870,12 +4862,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1845634178}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47696532e856d4ecdb9e74a18bda8cd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpeedHorizontal: 2
   enemySpeedVertical: 0.5
 --- !u!1 &1853992568
 GameObject:
@@ -5012,12 +5003,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1908887080}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47696532e856d4ecdb9e74a18bda8cd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpeedHorizontal: 2
   enemySpeedVertical: 0.5
 --- !u!212 &1908887082
 SpriteRenderer:
@@ -5141,7 +5131,7 @@ GameObject:
   - component: {fileID: 1910941355}
   - component: {fileID: 1910941354}
   - component: {fileID: 1910941353}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Right
   m_TagString: EndBorder
   m_Icon: {fileID: 0}
@@ -5161,7 +5151,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 2.2790365, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -5172,7 +5162,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 7.837123, y: 1}
   m_EdgeRadius: 0
 --- !u!212 &1910941354
 SpriteRenderer:
@@ -5279,12 +5269,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2081573873}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47696532e856d4ecdb9e74a18bda8cd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpeedHorizontal: 2
   enemySpeedVertical: 0.5
 --- !u!50 &2081573876
 Rigidbody2D:

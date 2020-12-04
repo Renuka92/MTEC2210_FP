@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    public float enemySpeedHorizontal;
+    public static float enemySpeedHorizontal = 3;
     public float enemySpeedVertical;
+
     GameManager gameManager;
     Rigidbody2D rb;
 
@@ -64,11 +65,10 @@ public class EnemyMovement : MonoBehaviour
             enemySpeedVertical *= -1.0f;
         }
 
-
-        //if (collision.gameObject.tag == "EnemyBoundary")
-        //{
-        //    transform.position += (Vector3.down * 2 * Time.deltaTime);
-        //}
+        //    //if (collision.gameObject.tag == "EnemyBoundary")
+        //    //{
+        //    //    transform.position += (Vector3.down * 2 * Time.deltaTime);
+        //    //}
     }
 
 
@@ -76,16 +76,19 @@ public class EnemyMovement : MonoBehaviour
     {
         if (collision.gameObject.tag == "PlayerBullet")
         {
+            Debug.Log("got em");
             EnemyKilled();
+            //Destroy(gameObject);
+            //score = score++;
             Debug.Log("Enemy Killed!");
         }
     }
 
     public void EnemyKilled()
     {
-        Vector2 pos = transform.position;
-        gameManager.IncreaseScore();
+        //Vector2 pos = transform.position;
+        //gameManager.IncreaseScore();
         Destroy(gameObject);
-        gameManager.IncreaseKillCounter(pos);
+        //        gameManager.IncreaseKillCounter(pos);
     }
 }

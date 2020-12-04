@@ -143,8 +143,7 @@ public class PlayerScript : MonoBehaviour
 
         if (bulletAmount < maxBulletsOnScreen)
         {
-            float firePoint = sr.bounds.size.x / 1.5f;
-            Vector2 pos = new Vector2(transform.position.x + firePoint, transform.position.y);
+            Vector2 pos = new Vector2(transform.position.x, transform.position.y);
             var bullet = Instantiate(bulletPrefab, pos, Quaternion.identity, bulletHolder);
             bullet.GetComponent<BulletScript>().speed = bulletSpeed;
         }
@@ -162,7 +161,6 @@ public class PlayerScript : MonoBehaviour
         {
             inputMovement = 0;
         }
-
     }
 
     void TakeHit()

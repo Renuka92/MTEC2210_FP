@@ -126,11 +126,11 @@ public class GameManager : MonoBehaviour
         score += 1;
     }
 
-    public void IncreaseKillCounter(Vector2 pos)
-    {
-        killCount++;
-        enemyPos = pos;
-    }
+    //public void IncreaseKillCounter(Vector2 pos)
+    //{
+    //    killCount++;
+    //    enemyPos = pos;
+    //}
 
     public void GameOver()
     {

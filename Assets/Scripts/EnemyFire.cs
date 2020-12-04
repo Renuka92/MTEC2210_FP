@@ -122,8 +122,8 @@ public class EnemyFire : MonoBehaviour
 
         if (enemyBulletAmount < maxEnemyBulletsOnScreen)
         {
-            float firePoint = sr.bounds.size.x / 1.5f;
-            Vector2 pos = new Vector2(transform.position.x + firePoint, transform.position.y);
+            //float firePoint = sr.bounds.size.x / 1.5f;
+            Vector2 pos = new Vector2(transform.position.x, transform.position.y);
             var enemyBullet = Instantiate(enemyBulletPrefab, pos, Quaternion.identity, enemyBulletHolder);
             enemyBullet.GetComponent<BulletScript>().speed = enemyBulletSpeed;
 
