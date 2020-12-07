@@ -4,26 +4,25 @@ using UnityEngine;
 
 public class BorderCollision : MonoBehaviour
 {
-    float enemySpeedHorizontal = EnemyMovement.enemySpeedHorizontal;
-    float enemySpeedVertical = EnemyMovement.enemySpeedVertical;
+    public GameObject enemyReference;
 
     void Start()
     {
-        
+        enemyReference = GameObject.FindGameObjectWithTag("Enemy");
+
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        
-    }
+        float enemyVertical = enemyReference.transform.position.y;
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
+
         if (collision.gameObject.tag == "Enemy")
         {
-            enemySpeedHorizontal *= -1.0f;
-            enemySpeedVertical *= -1.0f;
+            EnemyMovement.enemySpeedHorizontal *= -1.0f;
+            enemyVertical -= 0.05f;
+            enemyReference.transform.position = new Vector3(0, enemyVertical, 0);
+
         }
     }
 }

@@ -6,7 +6,7 @@ public class PlayerScript : MonoBehaviour
 {
     // SPACE INVADERS!!!
     public GameManager gameManager;
-    //public SoundManager soundManager;
+    public SoundMananger soundManager;
 
     public float playerSpeed;
     public Rigidbody2D rb;
@@ -26,15 +26,13 @@ public class PlayerScript : MonoBehaviour
     bool ready;
 
     Vector2 defaultPos;
-    Vector2 velocity;
+    //Vector2 velocity;
 
     float t;
     float f;
     float inputDelayFactor;
 
     [HideInInspector] public int maxPlayerHealth;
-
-    float flashDuration = 0.1f;
 
     GameObject bulletPrefab;
     Transform bulletHolder;
@@ -103,21 +101,13 @@ public class PlayerScript : MonoBehaviour
             } else
             {
                 sr.color = Color.white;
-                f = flashDuration;
                 hitTaken = false;
             }
         }
     }
 
-    //private void FixedUpdate()
-    //{
-    //    rb.MovePosition((Vector2)transform.position + velocity);
-    //}
-
     void MovePlayer()
     {
-        //velocity.x = Input.GetAxis("Horizontal") * Time.deltaTime * moveSpeed;
-
         if (Input.GetKey(rightKey))
         {
             inputMovement = 1;
@@ -154,7 +144,6 @@ public class PlayerScript : MonoBehaviour
         if (collision.gameObject.tag == "EnemyBullet")
         {
             TakeHit();
-            //collision.gameObject.GetComponent<EnemyScript>().EnemyKilled();
         }
 
         if (collision.gameObject.tag == "EndBorder")
@@ -190,7 +179,6 @@ public class PlayerScript : MonoBehaviour
     public void PlayerKilled()
     {
         gameManager.SetNewFillAmount(0, maxPlayerHealth);
-        //gameManager.TriggerExplosion
         gameManager.GameOver();
         Destroy(gameObject);
     }

@@ -5,16 +5,7 @@ using UnityEngine;
 public class EnemyFire : MonoBehaviour
 {
     GameManager gameManager;
-    //SoundManager soundManager;
-
-    //[HideInInspector]
-    //public float moveSpeed = 4;
-    //[HideInInspector]
-    //public float moveWaveFreq = 5f;
-    //[HideInInspector]
-    //public float moveWaveAmp = 0.2f;
-    //[HideInInspector]
-    //public float dodge = 2;
+    SoundMananger soundMananger;
 
     //[HideInInspector]
     //public int health = 3;
@@ -35,25 +26,18 @@ public class EnemyFire : MonoBehaviour
     Rigidbody2D rb;
     SpriteRenderer sr;
 
-    //float speedMultiplier = 3f;
-
-    //bool bulletFound;
-    //bool playerFound;
     bool readyToFire;
     bool hitTaken;
     float t;
     float f;
-    //float flashDuration = 0.1f;
 
     //[HideInInspector]
     public float enemyfireDelay = 1;
 
-    //public float speedModifier;
-
     void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-        //soundManager = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+        soundMananger = GameObject.Find("SoundManager").GetComponent<SoundMananger>();
 
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
@@ -84,37 +68,26 @@ public class EnemyFire : MonoBehaviour
 
     }
 
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    //if (collision.gameObject.tag == "Player")
-    //    //{
-    //    //    collision.gameObject.GetComponent<PlayerScript>().PlayerKilled();
-    //    //    Debug.Log("took player out");
-    //    //    EnemyKilled();
-    //    //}
-    //}
+    void TakeHit()
+    {
+        hitTaken = true;
 
+        //if (gameManager.enableParticles)
+        //{
+        //    hit.Stop();
+        //    hit.Play();
+        //}
 
-    //void TakeHit()
-    //{
-    //    hitTaken = true;
+        soundMananger.PlaySoundAtPosition((Vector2)transform.position, 2);
 
-    //    //if (gameManager.enableParticles)
-    //    //{
-    //    //    hit.Stop();
-    //    //    hit.Play();
-    //    //}
-
-    //    //soundManager.PlaySoundAtPosition((Vector2)transform.position, 2);
-
-    //    //if (health -1 > 0)
-    //    //{
-    //    //    health -= 1;
-    //    //} else
-    //    //{
-    //    //    EnemyKilled();
-    //    //}
-    //}
+        //    //if (health -1 > 0)
+        //    //{
+        //    //    health -= 1;
+        //    //} else
+        //    //{
+        //    //    EnemyKilled();
+        //    //}
+    }
 
     void Fire()
     {
@@ -122,12 +95,11 @@ public class EnemyFire : MonoBehaviour
 
         if (enemyBulletAmount < maxEnemyBulletsOnScreen)
         {
-            //float firePoint = sr.bounds.size.x / 1.5f;
             Vector2 pos = new Vector2(transform.position.x, transform.position.y);
             var enemyBullet = Instantiate(enemyBulletPrefab, pos, Quaternion.identity, enemyBulletHolder);
             enemyBullet.GetComponent<BulletScript>().speed = enemyBulletSpeed;
 
-            //soundManager.PlaySoundAtPosition(pos, 1);
+            soundMananger.PlaySoundAtPosition(pos, 1);
         }
     }
 }

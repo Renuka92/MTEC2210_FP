@@ -3,26 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    //[Header("ENEMY SETTINGS")]
+    [Header("UFO SETTINGS")]
 
-    //public float enemyMoveSpeed;
-    //public float enemyMoveWaveFrequency;
-    //public float enemyMoveWaveAmplitude;
-    //[Range(1, 10)] public int enemyHealth;
-    //public float enemyDodgeAmount;
-    //public float enemyBulletDetectionRadius;
-    //public float enemyBulletDetectionDistance;
-    //public float initialEnemySpawnDelay;
-    //public float timeBetweenEnemySpawns;
-    //[Range(1, 10)] public int maxEnemiesOnScreen;
-
-    //public float enemyBulletSpeed;
-    //public float enemyFireDelay;
-    //[Range(1, 15)] public int maxEnemyBulletsOnScreen;
+    public float UFO_MoveSpeed = 2;
+    public float initialUFO_SpawnDelay;
+    public float timeBetweenUFO_Spawns;
 
     public static int score;
     //public static int highScore;
@@ -38,7 +26,7 @@ public class GameManager : MonoBehaviour
     float targetAmount;
 
     [Header("OTHER SETTINGS")]
-    //public SoundManager soundManager;
+    public SoundMananger soundMananger;
     public bool enableAudio;
     public bool enableParticles;
 
@@ -47,15 +35,16 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public GameObject bulletHolder;
 
-    int killCount;
+    int enemyCount = 25;
     //int killCountMax = 3;
     Vector2 enemyPos;
 
     GameObject enemyPrefab;
     GameObject enemyBulletPrefab;
+    GameObject UFOPrefab;
 
-    //float xPos = 9.5f;
-    //float t;
+    //float xPos = 2.5f;
+    float t = 5;
 
     public static bool gameOver;
 
@@ -67,10 +56,12 @@ public class GameManager : MonoBehaviour
         enemyBulletHolder = new GameObject("EnemyBulletHolder");
         bulletHolder = new GameObject("BulletHolder");
 
-        //t = initialEnemySpawnDelay;
+        t = initialUFO_SpawnDelay;
 
         //enemyPrefab = Resources.Load<GameObject>("Enemy") as GameObject;
         enemyBulletPrefab = Resources.Load<GameObject>("EnemyBullet") as GameObject;
+
+        UFOPrefab = Resources.Load<GameObject>("UFO") as GameObject;
 
         //highScore = PlayerPrefs.GetInt("highscore", highScore);
 
@@ -89,7 +80,6 @@ public class GameManager : MonoBehaviour
         //highScoreText.gameObject.SetActive(enableUI);
         restartText.gameObject.SetActive(enableUI);
         //healthBar.gameObject.SetActive(enableUI);
-
     }
 
     private void Update()
@@ -119,18 +109,38 @@ public class GameManager : MonoBehaviour
 
             restartText.gameObject.SetActive(gameOver);
         }
+
+        if (t > 0 || enemyCount == 0)
+        {
+            t -= Time.deltaTime;
+        }
+        else
+        {
+            SpawnUFO();
+            t = timeBetweenUFO_Spawns;
+        }
+
+        if (enemyCount == 0)
+        {
+            GameOver();
+        }
+    }
+
+    void SpawnUFO()
+    {
+        var pos = new Vector2(5.5f, 3.5f);
+        GameObject UFO = Instantiate(UFOPrefab, pos, Quaternion.identity);
     }
 
     public void IncreaseScore()
     {
-        score += 1;
+        score++;
     }
 
-    //public void IncreaseKillCounter(Vector2 pos)
-    //{
-    //    killCount++;
-    //    enemyPos = pos;
-    //}
+    public void EnemyCount()
+    {
+        enemyCount--;
+    }
 
     public void GameOver()
     {
@@ -148,7 +158,6 @@ public class GameManager : MonoBehaviour
         scoreText.text = "Score " + GameManager.score.ToString("00");
         //highScoreText.text = "Best " + GameManager.score.ToString("00");
     }
-
 
     //public void DestroyAllGameObjects()
     //{
