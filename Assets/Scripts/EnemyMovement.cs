@@ -9,11 +9,13 @@ public class EnemyMovement : MonoBehaviour
     public float UFO_Speed = enemySpeedHorizontal;
 
     GameManager gameManager;
+    SoundMananger soundMananger;
     Rigidbody2D rb;
 
     void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        soundMananger = GameObject.Find("SoundManager").GetComponent<SoundMananger>();
         rb = GetComponent<Rigidbody2D>();
 
     }
@@ -23,6 +25,8 @@ public class EnemyMovement : MonoBehaviour
         if (UFO)
         {
             transform.position += (Vector3.left * UFO_Speed * Time.deltaTime);
+            //soundMananger.PlaySoundAtPosition((Vector2)transform.position, 2);
+
         }
         else
         {
@@ -48,6 +52,9 @@ public class EnemyMovement : MonoBehaviour
         {
             EnemyKilled();
             Debug.Log("Enemy Killed!");
+
+            soundMananger.PlaySoundAtPosition((Vector2)transform.position, 5);
+
             if (!UFO)
             {
                 gameManager.EnemyCount();

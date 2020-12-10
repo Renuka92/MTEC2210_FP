@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
     public SoundMananger soundMananger;
     public bool enableAudio;
     public bool enableParticles;
+    public float gameTime = 30;
 
     [HideInInspector]
     public GameObject enemyBulletHolder;
@@ -109,6 +110,29 @@ public class GameManager : MonoBehaviour
 
             restartText.gameObject.SetActive(gameOver);
         }
+
+        if (!gameOver)
+        {
+            gameTime -= Time.deltaTime;
+            if (gameTime > 20)
+            {
+                soundMananger.PlaySoundAtPosition((Vector2)transform.position, 6);
+            }
+            else if (gameTime > 15)
+            {
+                soundMananger.PlaySoundAtPosition((Vector2)transform.position, 7);
+            }
+            else if (gameTime > 5)
+            {
+                soundMananger.PlaySoundAtPosition((Vector2)transform.position, 8);
+            }
+            else
+            {
+                soundMananger.PlaySoundAtPosition((Vector2)transform.position, 9);
+            }
+        }
+
+        
 
         if (t > 0 || enemyCount == 0)
         {

@@ -78,7 +78,7 @@ public class EnemyFire : MonoBehaviour
         //    hit.Play();
         //}
 
-        soundMananger.PlaySoundAtPosition((Vector2)transform.position, 2);
+        //soundMananger.PlaySoundAtPosition((Vector2)transform.position, 2);
 
         //    //if (health -1 > 0)
         //    //{
@@ -99,7 +99,7 @@ public class EnemyFire : MonoBehaviour
             var enemyBullet = Instantiate(enemyBulletPrefab, pos, Quaternion.identity, enemyBulletHolder);
             enemyBullet.GetComponent<BulletScript>().speed = enemyBulletSpeed;
 
-            soundMananger.PlaySoundAtPosition(pos, 1);
+            //soundMananger.PlaySoundAtPosition(pos, 1);
         }
     }
 }

@@ -12,13 +12,21 @@ public class SoundMananger : MonoBehaviour
 
     public AudioSource sourcePrefab;
 
-    public AudioClip[] enemyMoveClips;
-    int lastEnemy;
+    //public AudioClip[] enemyMoveClips;
+    //int lastEnemy;
 
-    public AudioClip[] UFOMoveClips;
-    int lastUFO;
+    //public AudioClip[] UFOMoveClips;
+    //int lastUFO;
 
+    public AudioClip UFOMoveLowClip;
+    public AudioClip UFOMoveHighClip;
     public AudioClip explosionClip;
+    public AudioClip shootClip;
+    public AudioClip invaderKilledClip;
+    public AudioClip enemyMove1;
+    public AudioClip enemyMove2;
+    public AudioClip enemyMove3;
+    public AudioClip enemyMove4;
 
     // Start is called before the first frame update
     void Start()
@@ -49,20 +57,45 @@ public class SoundMananger : MonoBehaviour
 
         if (typeIndex == 1)
         {
-            int clipNum = GetClipIndex(enemyMoveClips.Length, lastEnemy);
-            lastEnemy = clipNum;
-            source.clip = enemyMoveClips[clipNum];
-            source.volume = 0.5f;
+            //int clipNum = GetClipIndex(enemyMoveClips.Length, lastEnemy);
+            //lastEnemy = clipNum;
+            //source.clip = enemyMoveClips[clipNum];
+            //source.volume = 0.5f;
+            source.clip = UFOMoveLowClip;
         }
         else if (typeIndex == 2)
         {
-            int clipNum = GetClipIndex(UFOMoveClips.Length, lastUFO);
-            lastUFO = clipNum;
-            source.clip = UFOMoveClips[clipNum];
+            //int clipNum = GetClipIndex(UFOMoveClips.Length, lastUFO);
+            //lastUFO = clipNum;
+            source.clip = UFOMoveHighClip;
         }
-        else
+        else if (typeIndex == 3)
         {
             source.clip = explosionClip;
+        }
+        else if (typeIndex == 4)
+        {
+            source.clip = shootClip;
+        }
+        else if (typeIndex == 5)
+        {
+            source.clip = invaderKilledClip;
+        }
+        else if (typeIndex == 6)
+        {
+            source.clip = enemyMove1;
+        }
+        else if (typeIndex == 7)
+        {
+            source.clip = enemyMove2;
+        }
+        else if (typeIndex == 8)
+        {
+            source.clip = enemyMove3;
+        }
+        else if (typeIndex == 9)
+        {
+            source.clip = enemyMove4;
         }
 
         source.pitch = Random.Range(0.75f, 1.25f);

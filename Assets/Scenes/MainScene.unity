@@ -1115,6 +1115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyReference: {fileID: 0}
+  soundMananger: {fileID: 0}
 --- !u!1 &459864716
 GameObject:
   m_ObjectHideFlags: 0
@@ -1338,75 +1339,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &555165945
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 994684519656921461, guid: 3637759425db348699263e4a851ad128,
-        type: 3}
-      propertyPath: m_Name
-      value: Audio Source
-      objectReference: {fileID: 0}
-    - target: {fileID: 2462459056181238675, guid: 3637759425db348699263e4a851ad128,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.849107
-      objectReference: {fileID: 0}
-    - target: {fileID: 2462459056181238675, guid: 3637759425db348699263e4a851ad128,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 6.282267
-      objectReference: {fileID: 0}
-    - target: {fileID: 2462459056181238675, guid: 3637759425db348699263e4a851ad128,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -11.028698
-      objectReference: {fileID: 0}
-    - target: {fileID: 2462459056181238675, guid: 3637759425db348699263e4a851ad128,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2462459056181238675, guid: 3637759425db348699263e4a851ad128,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2462459056181238675, guid: 3637759425db348699263e4a851ad128,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2462459056181238675, guid: 3637759425db348699263e4a851ad128,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2462459056181238675, guid: 3637759425db348699263e4a851ad128,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 2462459056181238675, guid: 3637759425db348699263e4a851ad128,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2462459056181238675, guid: 3637759425db348699263e4a851ad128,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2462459056181238675, guid: 3637759425db348699263e4a851ad128,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 3637759425db348699263e4a851ad128, type: 3}
 --- !u!1 &574319950
 GameObject:
   m_ObjectHideFlags: 0
@@ -1729,15 +1661,15 @@ MonoBehaviour:
   gameManager: {fileID: 1185784846}
   sourcePrefab: {fileID: 7398429984470420942, guid: 3637759425db348699263e4a851ad128,
     type: 3}
-  enemyMoveClips:
-  - {fileID: 8300000, guid: ad7df6a7722c0be46967ffdaf30cc8b0, type: 3}
-  - {fileID: 8300000, guid: 347f5779c4f392244b9d5bd637fa8794, type: 3}
-  - {fileID: 8300000, guid: 4207689acacadb944a627a225d131e3f, type: 3}
-  - {fileID: 8300000, guid: 93c827fa04f403b49bda32b32600e3c7, type: 3}
-  UFOMoveClips:
-  - {fileID: 8300000, guid: 21a2fb6551bc2704f9deca3921b99538, type: 3}
-  - {fileID: 8300000, guid: 23b7cf8fa0f8d2b468fc48bf4f3460fa, type: 3}
+  UFOMoveLowClip: {fileID: 0}
+  UFOMoveHighClip: {fileID: 0}
   explosionClip: {fileID: 8300000, guid: 296dce0e1b2b98146b3eee3666066eed, type: 3}
+  shootClip: {fileID: 8300000, guid: 1d8fc22e481b35645ba16485274f05e5, type: 3}
+  invaderKilledClip: {fileID: 8300000, guid: 2a47e76af8274614bbf730eac699b9a6, type: 3}
+  enemyMove1: {fileID: 8300000, guid: ad7df6a7722c0be46967ffdaf30cc8b0, type: 3}
+  enemyMove2: {fileID: 8300000, guid: 347f5779c4f392244b9d5bd637fa8794, type: 3}
+  enemyMove3: {fileID: 8300000, guid: 4207689acacadb944a627a225d131e3f, type: 3}
+  enemyMove4: {fileID: 8300000, guid: 93c827fa04f403b49bda32b32600e3c7, type: 3}
 --- !u!4 &624223089
 Transform:
   m_ObjectHideFlags: 0
@@ -1954,6 +1886,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyReference: {fileID: 0}
+  soundMananger: {fileID: 0}
 --- !u!1 &805738345
 GameObject:
   m_ObjectHideFlags: 0
@@ -3243,6 +3176,7 @@ MonoBehaviour:
   soundMananger: {fileID: 624223088}
   enableAudio: 1
   enableParticles: 0
+  gameTime: 30
   enemyBulletHolder: {fileID: 0}
   bulletHolder: {fileID: 0}
 --- !u!4 &1185784847
@@ -5176,6 +5110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyReference: {fileID: 0}
+  soundMananger: {fileID: 0}
 --- !u!61 &1910941353
 BoxCollider2D:
   m_ObjectHideFlags: 0
