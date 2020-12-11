@@ -137,7 +137,8 @@ public class PlayerScript : MonoBehaviour
             var bullet = Instantiate(bulletPrefab, pos, Quaternion.identity, bulletHolder);
             bullet.GetComponent<BulletScript>().speed = bulletSpeed;
 
-            //soundManager.PlaySoundAtPosition(pos, 4); SHOOT NOISE
+            //SHOOT NOISE
+            soundManager.PlaySoundAtPosition(pos, 4);
         }
     }
 
@@ -159,7 +160,8 @@ public class PlayerScript : MonoBehaviour
         hitTaken = true;
 
         PlayerKilled();
-        //soundManager.PlaySoundAtPosition((Vector2)transform.position, 3); EXPLOSION NOISE - PLAYER DIES
+        //EXPLOSION NOISE - PLAYER DIES
+        soundManager.PlaySoundAtPosition((Vector2)transform.position, 3); 
 
         //if (playerHealth - 1 > 0)
         //{

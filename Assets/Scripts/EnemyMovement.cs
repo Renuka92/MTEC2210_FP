@@ -25,6 +25,7 @@ public class EnemyMovement : MonoBehaviour
         if (UFO)
         {
             transform.position += (Vector3.left * UFO_Speed * Time.deltaTime);
+            //UFO SOUND
             //soundMananger.PlaySoundAtPosition((Vector2)transform.position, 2);
 
         }

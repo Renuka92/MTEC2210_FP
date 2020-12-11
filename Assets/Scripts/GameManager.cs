@@ -59,7 +59,7 @@ public class GameManager : MonoBehaviour
 
         t = initialUFO_SpawnDelay;
 
-        //enemyPrefab = Resources.Load<GameObject>("Enemy") as GameObject;
+        enemyPrefab = Resources.Load<GameObject>("Enemy") as GameObject;
         enemyBulletPrefab = Resources.Load<GameObject>("EnemyBullet") as GameObject;
 
         UFOPrefab = Resources.Load<GameObject>("UFO") as GameObject;
@@ -114,22 +114,22 @@ public class GameManager : MonoBehaviour
         if (!gameOver)
         {
             gameTime -= Time.deltaTime;
-            if (gameTime > 20)
-            {
-                soundMananger.PlaySoundAtPosition((Vector2)transform.position, 6);
-            }
-            else if (gameTime > 15)
-            {
-                soundMananger.PlaySoundAtPosition((Vector2)transform.position, 7);
-            }
-            else if (gameTime > 5)
-            {
-                soundMananger.PlaySoundAtPosition((Vector2)transform.position, 8);
-            }
-            else
-            {
-                soundMananger.PlaySoundAtPosition((Vector2)transform.position, 9);
-            }
+            //if (gameTime > 20)
+            //{
+            //    soundMananger.PlaySoundAtPosition((Vector2)transform.position, 6);
+            //}
+            //else if (gameTime > 15)
+            //{
+            //    soundMananger.PlaySoundAtPosition((Vector2)transform.position, 7);
+            //}
+            //else if (gameTime > 5)
+            //{
+            //    soundMananger.PlaySoundAtPosition((Vector2)transform.position, 8);
+            //}
+            //else
+            //{
+            //    soundMananger.PlaySoundAtPosition((Vector2)transform.position, 9);
+            //}
         }
 
         
