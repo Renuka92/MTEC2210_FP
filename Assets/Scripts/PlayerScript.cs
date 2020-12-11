@@ -26,7 +26,6 @@ public class PlayerScript : MonoBehaviour
     bool ready;
 
     Vector2 defaultPos;
-    //Vector2 velocity;
 
     float t;
     float f;
@@ -183,7 +182,7 @@ public class PlayerScript : MonoBehaviour
 
     public void PlayerKilled()
     {
-        gameManager.SetNewFillAmount(0, maxPlayerHealth);
+        //gameManager.SetNewFillAmount(0, maxPlayerHealth);
         gameManager.GameOver();
         Destroy(gameObject);
     }

@@ -27,7 +27,6 @@ public class EnemyMovement : MonoBehaviour
             transform.position += (Vector3.left * UFO_Speed * Time.deltaTime);
             //UFO SOUND
             //soundMananger.PlaySoundAtPosition((Vector2)transform.position, 2);
-
         }
         else
         {
@@ -52,7 +51,6 @@ public class EnemyMovement : MonoBehaviour
         if (collision.gameObject.tag == "PlayerBullet")
         {
             EnemyKilled();
-            Debug.Log("Enemy Killed!");
 
             soundMananger.PlaySoundAtPosition((Vector2)transform.position, 5);
 

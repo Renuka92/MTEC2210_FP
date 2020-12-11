@@ -22,8 +22,6 @@ public class GameManager : MonoBehaviour
     public Text scoreText;
     //public Text highScoreText;
     public Text restartText;
-    //public Image healthBar;
-    float targetAmount;
 
     [Header("OTHER SETTINGS")]
     public SoundMananger soundMananger;
@@ -32,19 +30,14 @@ public class GameManager : MonoBehaviour
     public float gameTime = 30;
 
     [HideInInspector]
-    public GameObject enemyBulletHolder;
-    [HideInInspector]
     public GameObject bulletHolder;
 
     int enemyCount = 25;
     //int killCountMax = 3;
     Vector2 enemyPos;
 
-    GameObject enemyPrefab;
-    GameObject enemyBulletPrefab;
     GameObject UFOPrefab;
 
-    //float xPos = 2.5f;
     float t = 5;
 
     public static bool gameOver;
@@ -54,13 +47,9 @@ public class GameManager : MonoBehaviour
     {
         score = 0;
 
-        enemyBulletHolder = new GameObject("EnemyBulletHolder");
         bulletHolder = new GameObject("BulletHolder");
 
         t = initialUFO_SpawnDelay;
-
-        enemyPrefab = Resources.Load<GameObject>("Enemy") as GameObject;
-        enemyBulletPrefab = Resources.Load<GameObject>("EnemyBullet") as GameObject;
 
         UFOPrefab = Resources.Load<GameObject>("UFO") as GameObject;
 
@@ -80,7 +69,6 @@ public class GameManager : MonoBehaviour
         scoreText.gameObject.SetActive(enableUI);
         //highScoreText.gameObject.SetActive(enableUI);
         restartText.gameObject.SetActive(enableUI);
-        //healthBar.gameObject.SetActive(enableUI);
     }
 
     private void Update()
@@ -90,7 +78,7 @@ public class GameManager : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Return))
             {
                 gameOver = false;
-                SceneManager.LoadScene(0);
+                SceneManager.LoadScene(1);
             }
         }
 
@@ -102,10 +90,6 @@ public class GameManager : MonoBehaviour
 
         if (enableUI)
         {
-            //float s = 5;
-            //healthBar.fillAmount = Mathf.Lerp(healthBar.fillAmount, targetAmount, s * Time.deltaTime);
-            //healthBar.color = healthBarGradient.Evaluate(healthBar.fillAmount);
-
             DisplayScores();
 
             restartText.gameObject.SetActive(gameOver);
@@ -131,8 +115,6 @@ public class GameManager : MonoBehaviour
             //    soundMananger.PlaySoundAtPosition((Vector2)transform.position, 9);
             //}
         }
-
-        
 
         if (t > 0 || enemyCount == 0)
         {
@@ -172,10 +154,10 @@ public class GameManager : MonoBehaviour
         //DestroyAllGameObjects();
     }
 
-    public void SetNewFillAmount(int fill, int maxFill)
-    {
-        targetAmount = (float)fill / (float)maxFill;
-    }
+    //public void SetNewFillAmount(int fill, int maxFill)
+    //{
+    //    targetAmount = (float)fill / (float)maxFill;
+    //}
 
     void DisplayScores()
     {

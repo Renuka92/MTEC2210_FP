@@ -57,16 +57,10 @@ public class SoundMananger : MonoBehaviour
 
         if (typeIndex == 1)
         {
-            //int clipNum = GetClipIndex(enemyMoveClips.Length, lastEnemy);
-            //lastEnemy = clipNum;
-            //source.clip = enemyMoveClips[clipNum];
-            //source.volume = 0.5f;
             source.clip = UFOMoveLowClip;
         }
         else if (typeIndex == 2)
         {
-            //int clipNum = GetClipIndex(UFOMoveClips.Length, lastUFO);
-            //lastUFO = clipNum;
             source.clip = UFOMoveHighClip;
         }
         else if (typeIndex == 3)

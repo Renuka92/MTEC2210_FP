@@ -7,7 +7,6 @@ public class Play : MonoBehaviour
 {
     public void StartGame()
     {
-        Debug.Log("working");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

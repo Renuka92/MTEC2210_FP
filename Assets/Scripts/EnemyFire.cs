@@ -10,29 +10,19 @@ public class EnemyFire : MonoBehaviour
     //[HideInInspector]
     //public int health = 3;
 
-    //[HideInInspector]
     public GameObject enemyBulletPrefab;
-    //[HideInInspector]
+    public GameObject enemyBulletHolderObject;
     public Transform enemyBulletHolder;
-    //[HideInInspector]
-    public int maxEnemyBulletsOnScreen = 10;
-    //[HideInInspector]
     public float enemyBulletSpeed = 600;
-
-    //public GameObject psHit;
-    //public GameObject enemyAfterburner;
-    ParticleSystem hit;
+    //public float enemyfireDelay = 1;
+    public int maxEnemyBulletsOnScreen = 10;
 
     Rigidbody2D rb;
     SpriteRenderer sr;
 
     bool readyToFire;
     bool hitTaken;
-    float t;
     float f;
-
-    //[HideInInspector]
-    public float enemyfireDelay = 1;
 
     void Start()
     {
@@ -42,46 +32,43 @@ public class EnemyFire : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
 
-        enemyBulletHolder = gameManager.enemyBulletHolder.transform;
-        enemyBulletPrefab = Resources.Load<GameObject>("EnemyBullet") as GameObject;
-
+        enemyBulletHolderObject = new GameObject("EnemyBulletHolder");
+        enemyBulletHolder = enemyBulletHolderObject.transform;
     }
 
     void Update()
     {
         Fire();
 
-        if (hitTaken)
-        {
-            //Destroy(gameObject);
-            if (f > 0)
-            {
-                sr.color = Color.red;
-                f -= Time.deltaTime;
-            } else
-            {
-                sr.color = Color.white;
-                //f = flashDuration;
-                hitTaken = false;
-            }
-        }
-
-    }
-
-    void TakeHit()
-    {
-        hitTaken = true;
-
-        //soundMananger.PlaySoundAtPosition((Vector2)transform.position, 2);
-
-        //if (health -1 > 0)
+        //if (hitTaken)
         //{
-        //    health -= 1;
-        //} else
-        //{
-        //    EnemyKilled();
+        //    //Destroy(gameObject);
+        //    if (f > 0)
+        //    {
+        //        sr.color = Color.red;
+        //        f -= Time.deltaTime;
+        //    } else
+        //    {
+        //        sr.color = Color.white;
+        //        //f = flashDuration;
+        //        hitTaken = false;
+        //    }
         //}
+
     }
+
+    //void TakeHit()
+    //{
+    //    hitTaken = true;
+
+    //    //if (health -1 > 0)
+    //    //{
+    //    //    health -= 1;
+    //    //} else
+    //    //{
+    //    //    EnemyKilled();
+    //    //}
+    //}
 
     void Fire()
     {
