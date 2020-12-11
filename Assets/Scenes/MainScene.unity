@@ -3982,8 +3982,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49dcc21445a251241a062696f7da946e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyBulletPrefab: {fileID: 0}
-  enemyBulletHolder: {fileID: 0}
+  enemyBulletPrefab: {fileID: 8207203000305109516, guid: 1b2d5f8e20de54822a3867d0eb05b156,
+    type: 3}
+  enemyBulletHolder: {fileID: 6055082545369572721, guid: 4060a33d323ec48c48d96a2440a21819,
+    type: 3}
   maxEnemyBulletsOnScreen: 10
   enemyBulletSpeed: 600
   enemyfireDelay: 1

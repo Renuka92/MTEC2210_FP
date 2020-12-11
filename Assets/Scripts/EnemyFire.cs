@@ -72,21 +72,15 @@ public class EnemyFire : MonoBehaviour
     {
         hitTaken = true;
 
-        //if (gameManager.enableParticles)
-        //{
-        //    hit.Stop();
-        //    hit.Play();
-        //}
-
         //soundMananger.PlaySoundAtPosition((Vector2)transform.position, 2);
 
-        //    //if (health -1 > 0)
-        //    //{
-        //    //    health -= 1;
-        //    //} else
-        //    //{
-        //    //    EnemyKilled();
-        //    //}
+        //if (health -1 > 0)
+        //{
+        //    health -= 1;
+        //} else
+        //{
+        //    EnemyKilled();
+        //}
     }
 
     void Fire()
@@ -98,8 +92,6 @@ public class EnemyFire : MonoBehaviour
             Vector2 pos = new Vector2(transform.position.x, transform.position.y);
             var enemyBullet = Instantiate(enemyBulletPrefab, pos, Quaternion.identity, enemyBulletHolder);
             enemyBullet.GetComponent<BulletScript>().speed = enemyBulletSpeed;
-
-            //soundMananger.PlaySoundAtPosition(pos, 1);
         }
     }
 }
