@@ -166,13 +166,6 @@ public class PlayerScript : MonoBehaviour
         //{
         //    playerHealth -= 1;
 
-        //    //if (gameManager.enableParticles)
-        //    //{
-        //    //    hit.Stop();
-        //    //    hit.Play();
-        //    //}
-
-        //    //gameManager.SetNewFillAmount(playerHealth, maxPlayerHealth);
         //}
         //else
         //{
@@ -182,7 +175,6 @@ public class PlayerScript : MonoBehaviour
 
     public void PlayerKilled()
     {
-        //gameManager.SetNewFillAmount(0, maxPlayerHealth);
         gameManager.GameOver();
         Destroy(gameObject);
     }

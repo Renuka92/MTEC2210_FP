@@ -14,7 +14,6 @@ public class EnemyFire : MonoBehaviour
     public GameObject enemyBulletHolderObject;
     public Transform enemyBulletHolder;
     public float enemyBulletSpeed = 600;
-    //public float enemyfireDelay = 1;
     public int maxEnemyBulletsOnScreen = 10;
 
     Rigidbody2D rb;
@@ -40,35 +39,7 @@ public class EnemyFire : MonoBehaviour
     {
         Fire();
 
-        //if (hitTaken)
-        //{
-        //    //Destroy(gameObject);
-        //    if (f > 0)
-        //    {
-        //        sr.color = Color.red;
-        //        f -= Time.deltaTime;
-        //    } else
-        //    {
-        //        sr.color = Color.white;
-        //        //f = flashDuration;
-        //        hitTaken = false;
-        //    }
-        //}
-
     }
-
-    //void TakeHit()
-    //{
-    //    hitTaken = true;
-
-    //    //if (health -1 > 0)
-    //    //{
-    //    //    health -= 1;
-    //    //} else
-    //    //{
-    //    //    EnemyKilled();
-    //    //}
-    //}
 
     void Fire()
     {
