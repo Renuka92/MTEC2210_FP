@@ -979,8 +979,7 @@ MonoBehaviour:
     type: 3}
   enemyBulletHolder: {fileID: 1686769539849409333, guid: 4060a33d323ec48c48d96a2440a21819,
     type: 3}
-  enemyBulletSpeed: 750
-  maxEnemyBulletsOnScreen: 10
+  enemyBulletSpeed: 525
 --- !u!1 &327682552
 GameObject:
   m_ObjectHideFlags: 0
@@ -1636,8 +1635,7 @@ MonoBehaviour:
     type: 3}
   enemyBulletHolder: {fileID: 1686769539849409333, guid: 4060a33d323ec48c48d96a2440a21819,
     type: 3}
-  enemyBulletSpeed: 750
-  maxEnemyBulletsOnScreen: 10
+  enemyBulletSpeed: 525
 --- !u!1 &601544006
 GameObject:
   m_ObjectHideFlags: 0
@@ -4136,8 +4134,7 @@ MonoBehaviour:
     type: 3}
   enemyBulletHolder: {fileID: 1686769539849409333, guid: 4060a33d323ec48c48d96a2440a21819,
     type: 3}
-  enemyBulletSpeed: 600
-  maxEnemyBulletsOnScreen: 10
+  enemyBulletSpeed: 525
 --- !u!1 &1534124025
 GameObject:
   m_ObjectHideFlags: 0
@@ -4322,8 +4319,7 @@ MonoBehaviour:
     type: 3}
   enemyBulletHolder: {fileID: 1686769539849409333, guid: 4060a33d323ec48c48d96a2440a21819,
     type: 3}
-  enemyBulletSpeed: 750
-  maxEnemyBulletsOnScreen: 10
+  enemyBulletSpeed: 525
 --- !u!212 &1549293195
 SpriteRenderer:
   m_ObjectHideFlags: 0

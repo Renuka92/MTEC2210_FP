@@ -7,14 +7,14 @@ public class EnemyFire : MonoBehaviour
     GameManager gameManager;
     SoundMananger soundMananger;
 
-    //[HideInInspector]
     //public int health = 3;
 
-    public GameObject enemyBulletPrefab;
-    public GameObject enemyBulletHolderObject;
-    public Transform enemyBulletHolder;
-    public float enemyBulletSpeed = 600;
-    public int maxEnemyBulletsOnScreen = 10;
+    [HideInInspector] public GameObject enemyBulletPrefab;
+    [HideInInspector] public GameObject enemyBulletHolderObject;
+    [HideInInspector] public Transform enemyBulletHolder;
+
+    [Range(400, 800)] public float enemyBulletSpeed;
+    //[Range(1, 15)] public int maxEnemyBulletsOnScreen;
 
     Rigidbody2D rb;
     SpriteRenderer sr;
@@ -45,11 +45,18 @@ public class EnemyFire : MonoBehaviour
     {
         var enemyBulletAmount = enemyBulletHolder.gameObject.GetComponentsInChildren<BulletScript>().Length;
 
-        if (enemyBulletAmount < maxEnemyBulletsOnScreen)
-        {
-            Vector2 pos = new Vector2(transform.position.x, transform.position.y);
-            var enemyBullet = Instantiate(enemyBulletPrefab, pos, Quaternion.identity, enemyBulletHolder);
-            enemyBullet.GetComponent<BulletScript>().speed = enemyBulletSpeed;
-        }
+
+        Vector2 pos = new Vector2(transform.position.x, transform.position.y);
+        var enemyBullet = Instantiate(enemyBulletPrefab, pos, Quaternion.identity, enemyBulletHolder);
+        enemyBullet.GetComponent<BulletScript>().speed = enemyBulletSpeed;
+
+
+        //if (enemyBulletAmount < maxEnemyBulletsOnScreen)
+        //{
+        //    Vector2 pos = new Vector2(transform.position.x, transform.position.y);
+        //    var enemyBullet = Instantiate(enemyBulletPrefab, pos, Quaternion.identity, enemyBulletHolder);
+        //    enemyBullet.GetComponent<BulletScript>().speed = enemyBulletSpeed;
+        //}
+
     }
 }
